@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         sender: {
           name: 'Idlewood Capital Website',
-          email: 'noreply@idlewoodcapital.com'
+          email: 'info@idlewoodcapital.com'
         },
         to: [
           {
@@ -73,12 +73,22 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      const error = await response.text();
-      console.error('Brevo API error:', error);
-      throw new Error('Failed to send email');
+      const errorText = await response.text();
+      console.error('Brevo API error:', response.status, errorText);
+      
+      // Parse common Brevo errors
+      if (response.status === 401) {
+        return res.status(500).json({ error: 'Email service authentication failed. Please check API key.' });
+      } else if (response.status === 400) {
+        return res.status(500).json({ error: 'Invalid email configuration. Please verify sender email.' });
+      }
+      
+      throw new Error(`Failed to send email: ${errorText}`);
     }
 
     // Also add contact to Brevo (optional - for CRM features)
+    // Commented out temporarily for troubleshooting
+    /*
     await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
@@ -101,6 +111,7 @@ export default async function handler(req, res) {
       // Don't fail if contact creation fails
       console.log('Contact creation failed (non-critical):', err);
     });
+    */
 
     return res.status(200).json({ success: true, message: 'Message sent successfully' });
     
