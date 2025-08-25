@@ -1,0 +1,64 @@
+IDLEWOOD CAPITAL WEBSITE - CLAUDE CODE WORKFLOW
+=================================================
+
+This file contains the standard workflow for editing the Idlewood Capital website with Claude Code.
+
+## PROJECT SETUP
+- Repository: https://github.com/grkiv/idlewood-capital-website (Private)
+- Main files: index.html (Tailwind version), investor-portal.html, login-failed.html
+- Backup files: index-vanilla.html, index-minimal.html
+- Contact email: info@idlewoodcapital.com
+- Office: 1515 Mockingbird Ln., Suite 7123, Charlotte, NC 28209
+
+## STANDARD SESSION WORKFLOW
+
+### SESSION START
+1. User says: "Pull the latest changes from GitHub"
+2. Run: cd "C:\Users\georg\Projects\Idlewood Capital Website" && git pull origin main
+3. Check git status to confirm we're up to date
+
+### DURING SESSION
+1. Use Read, Edit, MultiEdit tools as needed
+2. Test changes locally when possible (start index.html)
+3. Commit changes frequently with descriptive messages:
+   - Use TodoWrite tool to track progress on complex tasks
+   - git add . && git commit -m "Descriptive message with 🤖 Generated with Claude Code footer"
+
+### SESSION END  
+1. User says: "Push changes to GitHub"  
+2. Run final git add . && git commit (if any uncommitted changes)
+3. Run: git push origin main
+4. Confirm successful push
+
+## KEY REMINDERS
+- Always use absolute paths: C:\Users\georg\Projects\Idlewood Capital Website\
+- Main branch is 'main' (not master or v1-minimal)
+- Repository is PRIVATE - contains business information
+- Contact form has 6 specific inquiry categories
+- Stats: 18+ Years Experience | Proven Track Record | Southeast Regional Focus
+- Hero CTAs: "View Portfolio" and "Our Approach" (not salesy)
+
+## COMMON TASKS
+- Content updates: Edit index.html (main Tailwind version)
+- Email changes: Search/replace across all files
+- Contact info: Update address/phone in contact section
+- Portfolio: Update property descriptions in portfolio section
+- Navigation: Maintain consistency across all pages
+
+## EMERGENCY RECOVERY
+If something goes wrong:
+1. git status (check current state)
+2. git log --oneline (see recent commits) 
+3. git reset --hard HEAD (revert uncommitted changes)
+4. git reset --hard [commit-hash] (revert to specific commit)
+5. Always push after recovery
+
+## FILE STRUCTURE
+- index.html - Main Tailwind website
+- investor-portal.html - Login page (redirects to login-failed.html)
+- login-failed.html - Access restricted page
+- assets/images/ - All images (logo, portfolio, team, hero)
+- index-vanilla.html - Original CSS version (backup)
+- index-minimal.html - Simplified version (backup)
+
+Last updated: 2025-01-25
