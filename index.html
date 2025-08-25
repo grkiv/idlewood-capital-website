@@ -590,8 +590,7 @@
                 };
                 
                 try {
-                    // Temporarily use test endpoint for debugging
-                    const response = await fetch('/api/test-contact', {
+                    const response = await fetch('/api/contact', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -600,7 +599,6 @@
                     });
                     
                     const result = await response.json();
-                    console.log('API Response:', result); // Debug log
                     
                     if (response.ok && result.success) {
                         // Success - show success message
@@ -629,8 +627,7 @@
                     // Error - show error message
                     console.error('Form submission error:', error);
                     buttonSpinner.classList.add('hidden');
-                    // Show detailed error for debugging
-                    buttonText.textContent = `Error: ${error.message || 'Unknown error'}`;
+                    buttonText.textContent = 'Error - Please Try Again';
                     buttonText.classList.remove('hidden');
                     submitButton.classList.remove('from-gold-500', 'to-gold-600');
                     submitButton.classList.add('from-red-500', 'to-red-600');

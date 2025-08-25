@@ -87,31 +87,29 @@ export default async function handler(req, res) {
     }
 
     // Also add contact to Brevo (optional - for CRM features)
-    // Commented out temporarily for troubleshooting
-    /*
-    await fetch('https://api.brevo.com/v3/contacts', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'api-key': apiKey
-      },
-      body: JSON.stringify({
-        email: email,
-        attributes: {
-          FIRSTNAME: name.split(' ')[0],
-          LASTNAME: name.split(' ').slice(1).join(' '),
-          PHONE: phone || '',
-          INQUIRY_TYPE: inquiryType || 'General'
+    try {
+      await fetch('https://api.brevo.com/v3/contacts', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'api-key': apiKey
         },
-        listIds: [2], // You'll need to create a list in Brevo and update this ID
-        updateEnabled: true
-      })
-    }).catch(err => {
+        body: JSON.stringify({
+          email: email,
+          attributes: {
+            FIRSTNAME: name.split(' ')[0],
+            LASTNAME: name.split(' ').slice(1).join(' '),
+            PHONE: phone || '',
+            INQUIRY_TYPE: inquiryType || 'General'
+          },
+          updateEnabled: true
+        })
+      });
+    } catch (err) {
       // Don't fail if contact creation fails
       console.log('Contact creation failed (non-critical):', err);
-    });
-    */
+    }
 
     return res.status(200).json({ success: true, message: 'Message sent successfully' });
     
