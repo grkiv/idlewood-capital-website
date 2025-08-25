@@ -92,72 +92,114 @@
         <div class="max-w-md w-full space-y-8">
             <!-- Header -->
             <div class="text-center">
-                <div class="mx-auto h-16 w-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
-                    <svg class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <div class="mx-auto h-16 w-16 bg-gold-500 rounded-full flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                 </div>
-                <h2 class="text-3xl font-display font-bold text-gray-900">Access Restricted</h2>
-                <p class="mt-4 text-gray-600">The Investor Portal is currently available by invitation only.</p>
+                <h2 class="text-3xl font-display font-bold text-gray-900">Investor Portal</h2>
+                <p class="mt-4 text-gray-600">Sign in to access your investor dashboard</p>
             </div>
 
-            <!-- Content Card -->
+            <!-- Login Form -->
             <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
-                <div class="space-y-6">
-                    <div class="text-center">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Portal Access</h3>
-                        <p class="text-gray-600 mb-6">
-                            Our secure investor portal provides qualified investors with access to:
-                        </p>
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            Email Address
+                        </label>
+                        <input 
+                            id="email" 
+                            name="email" 
+                            type="email" 
+                            required 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-colors"
+                            placeholder="Enter your email"
+                        >
                     </div>
                     
-                    <ul class="space-y-3 text-sm text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-gold-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            Property performance reports
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-gold-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            Financial statements and distributions
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-gold-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            Investment opportunity updates
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-5 w-5 text-gold-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            Direct communication with management
-                        </li>
-                    </ul>
-                    
-                    <div class="border-t pt-6 text-center">
-                        <p class="text-sm text-gray-600 mb-4">
-                            Interested in learning more about investment opportunities?
-                        </p>
-                        <a href="index.html#contact" 
-                           class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200">
-                            Contact Us
-                        </a>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                            Password
+                        </label>
+                        <input 
+                            id="password" 
+                            name="password" 
+                            type="password" 
+                            required 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-colors"
+                            placeholder="Enter your password"
+                        >
                     </div>
-                </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input 
+                                id="remember" 
+                                name="remember" 
+                                type="checkbox" 
+                                class="h-4 w-4 text-gold-500 focus:ring-gold-500 border-gray-300 rounded"
+                            >
+                            <label for="remember" class="ml-2 block text-sm text-gray-700">
+                                Remember me
+                            </label>
+                        </div>
+                        
+                        <div class="text-sm">
+                            <a href="mailto:george@idlewoodcapital.com?subject=Password Reset Request" class="font-medium text-gold-500 hover:text-gold-600">
+                                Forgot password?
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button 
+                        type="submit" 
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gold-500 transform hover:-translate-y-1 transition-all duration-200"
+                    >
+                        Sign In
+                    </button>
+                </form>
             </div>
             
-            <!-- Additional Info -->
+            <!-- Portal Features -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Portal Access Includes</h3>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center">
+                        <svg class="h-4 w-4 text-gold-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        Property performance reports and analytics
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="h-4 w-4 text-gold-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        Financial statements and distribution history
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="h-4 w-4 text-gold-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        New investment opportunity notifications
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="h-4 w-4 text-gold-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        Direct messaging with management team
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
             <div class="text-center text-sm text-gray-500">
                 <p>
-                    Current investors should contact 
-                    <a href="mailto:george@idlewoodcapital.com" class="text-gold-500 hover:text-gold-600 font-medium">
-                        george@idlewoodcapital.com
+                    New to Idlewood Capital? 
+                    <a href="index.html#contact" class="text-gold-500 hover:text-gold-600 font-medium">
+                        Contact us
                     </a> 
-                    for portal access.
+                    to learn about investment opportunities.
                 </p>
             </div>
         </div>
@@ -179,8 +221,9 @@
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu -->
+    <!-- JavaScript -->
     <script>
+        // Mobile menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -197,6 +240,24 @@
                 });
             });
         }
+        
+        // Login form handling
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if (!email || !password) {
+                alert('Please enter both email and password.');
+                return;
+            }
+            
+            // Redirect to login failed page for any login attempt
+            window.location.href = 'login-failed.html';
+        });
     </script>
 </body>
 </html>
