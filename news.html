@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Insights - Idlewood Capital</title>
+    <meta name="description" content="Latest news, market insights, and company updates from Idlewood Capital - premier real estate investment firm.">
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="news.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.svg" alt="Idlewood Capital" class="logo-image">
+                    <div class="logo-text-container">
+                        <span class="logo-text">IDLEWOOD</span>
+                        <span class="logo-subtitle">CAPITAL</span>
+                    </div>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#team" class="nav-link">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link active">News</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investor-portal.html" class="nav-link">Investor Portal</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- News Hero Section -->
+    <section class="news-hero">
+        <div class="container">
+            <div class="news-hero-content">
+                <span class="section-subtitle">Market Intelligence</span>
+                <h1 class="news-hero-title">News & Insights</h1>
+                <p class="news-hero-description">
+                    Stay informed with the latest market trends, company updates, 
+                    and strategic insights from Idlewood Capital's investment activities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured News -->
+    <section class="featured-news">
+        <div class="container">
+            <div class="featured-article">
+                <div class="featured-image" style="background-image: url('assets/images/news/melrose-market-featured.jpg');">
+                    <div class="featured-badge">Featured Story</div>
+                    <div class="article-date">January 15, 2025</div>
+                </div>
+                <div class="featured-content">
+                    <div class="article-category">Project News</div>
+                    <h2>Melrose Market: European-Style Brasserie Coming to 2710 Gervais</h2>
+                    <p class="article-excerpt">
+                        Idlewood Capital's 2710 Gervais Street retail center welcomes exciting new tenant 
+                        Melrose Market, a 5,000 sq ft European café-style American brasserie and market. 
+                        The concept, owned by Chad Elsey, will feature indoor seating, bar, lounge, patio, 
+                        and market offering pantry staples, wine, beer, and local goods with opening 
+                        planned for early 2026.
+                    </p>
+                    <div class="article-meta">
+                        <div class="author-info">
+                            <img src="assets/images/team/george-headshot.jpg" alt="George R. Kornegay IV" class="author-avatar">
+                            <div class="author-details">
+                                <span class="author-name">George R. Kornegay IV</span>
+                                <span class="author-title">Managing Partner</span>
+                            </div>
+                        </div>
+                        <a href="https://colatoday.6amcity.com/food/european-cafe-style-brasserie-market-coming-to-gervais-street" target="_blank" class="read-more-btn">Read Full Article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="news-grid-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="news-filters">
+                    <button class="filter-btn active" data-filter="all">All News</button>
+                    <button class="filter-btn" data-filter="company">Company Updates</button>
+                    <button class="filter-btn" data-filter="market">Market Insights</button>
+                    <button class="filter-btn" data-filter="projects">Project News</button>
+                </div>
+            </div>
+            
+            <div class="news-grid">
+                <article class="news-card" data-category="company">
+                    <div class="news-card-image">
+                        <div class="news-date">January 8, 2025</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Company News</div>
+                        <h3>Idlewood Capital Expands Asset Management Team</h3>
+                        <p>Strategic hiring initiative supports continued portfolio growth and enhanced investor services across Southeast markets.</p>
+                        <div class="news-meta">
+                            <span class="read-time">3 min read</span>
+                            <a href="#" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="market">
+                    <div class="news-card-image">
+                        <div class="news-date">December 28, 2024</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Market Insights</div>
+                        <h3>Charlotte Commercial Real Estate Market Outlook 2025</h3>
+                        <p>Analysis of emerging trends, investment opportunities, and growth projections for Charlotte's commercial real estate sector.</p>
+                        <div class="news-meta">
+                            <span class="read-time">8 min read</span>
+                            <a href="#" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="projects">
+                    <div class="news-card-image" style="background-image: url('assets/images/news/melrose-market-card.jpg');">
+                        <div class="news-date">December 20, 2024</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Project Update</div>
+                        <h3>Melrose Market Signs Lease at 2710 Gervais Street</h3>
+                        <p>European-style brasserie and market concept brings unique dining experience to Columbia's Melrose Heights retail center.</p>
+                        <div class="news-meta">
+                            <span class="read-time">4 min read</span>
+                            <a href="https://colatoday.6amcity.com/food/european-cafe-style-brasserie-market-coming-to-gervais-street" target="_blank" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="market">
+                    <div class="news-card-image">
+                        <div class="news-date">December 15, 2024</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Market Insights</div>
+                        <h3>Southeast Retail Real Estate Investment Trends</h3>
+                        <p>Comprehensive analysis of retail investment opportunities and market dynamics across key Southeast metropolitan areas.</p>
+                        <div class="news-meta">
+                            <span class="read-time">6 min read</span>
+                            <a href="#" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="company">
+                    <div class="news-card-image">
+                        <div class="news-date">December 10, 2024</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Company News</div>
+                        <h3>Idlewood Capital Achieves $500M Assets Under Management</h3>
+                        <p>Milestone reflects continued growth strategy and successful execution of value-creation initiatives across portfolio.</p>
+                        <div class="news-meta">
+                            <span class="read-time">2 min read</span>
+                            <a href="#" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="projects">
+                    <div class="news-card-image">
+                        <div class="news-date">November 28, 2024</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Project Update</div>
+                        <h3>Monroe Road Center Leasing Update</h3>
+                        <p>Strong tenant interest and strategic improvements drive increased occupancy rates at Charlotte retail property.</p>
+                        <div class="news-meta">
+                            <span class="read-time">3 min read</span>
+                            <a href="#" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="market">
+                    <div class="news-card-image">
+                        <div class="news-date">November 15, 2024</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Market Insights</div>
+                        <h3>The Rise of Mixed-Use Developments in Secondary Markets</h3>
+                        <p>Exploring investment opportunities and market dynamics driving mixed-use development growth in emerging markets.</p>
+                        <div class="news-meta">
+                            <span class="read-time">7 min read</span>
+                            <a href="#" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="company">
+                    <div class="news-card-image">
+                        <div class="news-date">November 5, 2024</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Company News</div>
+                        <h3>Q3 2024 Portfolio Performance Review</h3>
+                        <p>Quarterly performance highlights demonstrate continued value creation and strong operational metrics across all properties.</p>
+                        <div class="news-meta">
+                            <span class="read-time">5 min read</span>
+                            <a href="#" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="projects">
+                    <div class="news-card-image">
+                        <div class="news-date">October 25, 2024</div>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-category">Project Update</div>
+                        <h3>City Green Development Receives Planning Approval</h3>
+                        <p>Mixed-use urban development project moves forward with municipal approval and construction timeline finalization.</p>
+                        <div class="news-meta">
+                            <span class="read-time">4 min read</span>
+                            <a href="#" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="load-more">
+                <button class="btn btn-secondary">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Stay Informed</h3>
+                    <p>Subscribe to receive quarterly market insights and investment updates from Idlewood Capital.</p>
+                </div>
+                <div class="newsletter-form">
+                    <form class="subscription-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <p class="form-disclaimer">
+                            By subscribing, you agree to receive periodic updates. Unsubscribe at any time.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.svg" alt="Idlewood Capital" class="footer-logo-image">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-main">IDLEWOOD</span>
+                            <span class="footer-logo-sub">CAPITAL</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Premier private equity real estate investment firm creating 
+                        exceptional value through strategic acquisitions and development.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h5 class="footer-title">Company</h5>
+                        <ul class="footer-list">
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#portfolio">Portfolio</a></li>
+                            <li><a href="index.html#team">Team</a></li>
+                            <li><a href="news.html">News</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h5 class="footer-title">Services</h5>
+                        <ul class="footer-list">
+                            <li><a href="#">Acquisitions</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Asset Management</a></li>
+                            <li><a href="#">Investment Advisory</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Idlewood Capital. All rights reserved.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="news.js"></script>
+</body>
+</html>
