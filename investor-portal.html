@@ -1,351 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investor Portal - Idlewood Capital</title>
     <meta name="description" content="Secure investor portal for Idlewood Capital partners and stakeholders.">
     
-    <!-- Premium Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="investor-portal.css">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            500: '#c5a572',
+                            600: '#b8935a',
+                            700: '#a17d42'
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-50 min-h-screen font-sans">
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">
-                    <img src="assets/images/logo.svg" alt="Idlewood Capital" class="logo-image">
-                    <div class="logo-text-container">
-                        <span class="logo-text">IDLEWOOD</span>
-                        <span class="logo-subtitle">CAPITAL</span>
-                    </div>
-                </a>
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img src="assets/images/logo.svg" alt="Idlewood Capital" class="h-12 w-auto">
+                        <div class="flex flex-col">
+                            <span class="font-display text-xl font-bold text-gray-900">IDLEWOOD</span>
+                            <span class="text-xs font-semibold tracking-wider text-gold-500">CAPITAL</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">Home</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">About</a>
+                    <a href="index.html#portfolio" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">Portfolio</a>
+                    <a href="index.html#team" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">Team</a>
+                    <a href="investor-portal.html" class="text-gold-500 font-semibold">Investor Portal</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <svg class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
             
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#portfolio" class="nav-link">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#team" class="nav-link">Team</a>
-                </li>
-                <li class="nav-item">
-                    <a href="investor-portal.html" class="nav-link active">Investor Portal</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">Home</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">About</a>
+                    <a href="index.html#portfolio" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">Portfolio</a>
+                    <a href="index.html#team" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">Team</a>
+                    <a href="investor-portal.html" class="text-gold-500 font-semibold">Investor Portal</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-gold-500 font-medium transition-colors">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Login Section -->
-    <section class="portal-login" id="login-section">
-        <div class="container">
-            <div class="login-content">
-                <div class="login-header">
-                    <div class="login-logo">
-                        <img src="assets/images/logo.svg" alt="Idlewood Capital" class="portal-logo">
-                    </div>
-                    <h1 class="login-title">Investor Portal</h1>
-                    <p class="login-description">
-                        Access your investment dashboard, portfolio performance, and exclusive investor resources.
-                    </p>
+    <!-- Main Content -->
+    <div class="flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Header -->
+            <div class="text-center">
+                <div class="mx-auto h-16 w-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                    <svg class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                 </div>
-                
-                <div class="login-form-container">
-                    <form class="login-form" id="investor-login">
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
-                        </div>
-                        
-                        <div class="form-options">
-                            <label class="checkbox-container">
-                                <input type="checkbox" id="remember">
-                                <span class="checkmark"></span>
-                                Remember me
-                            </label>
-                            <a href="#" class="forgot-password">Forgot password?</a>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-full">Access Portal</button>
-                    </form>
-                    
-                    <div class="login-footer">
-                        <p class="access-request">
-                            Need access? <a href="index.html#contact" class="contact-link">Contact us</a> to request investor portal credentials.
+                <h2 class="text-3xl font-display font-bold text-gray-900">Access Restricted</h2>
+                <p class="mt-4 text-gray-600">The Investor Portal is currently available by invitation only.</p>
+            </div>
+
+            <!-- Content Card -->
+            <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+                <div class="space-y-6">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Portal Access</h3>
+                        <p class="text-gray-600 mb-6">
+                            Our secure investor portal provides qualified investors with access to:
                         </p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dashboard Section (Hidden by default) -->
-    <section class="portal-dashboard" id="dashboard-section" style="display: none;">
-        <div class="container">
-            <div class="dashboard-header">
-                <div class="welcome-section">
-                    <h2 class="welcome-title">Welcome back, <span id="investor-name">Investor</span></h2>
-                    <p class="last-login">Last login: <span id="last-login-date">Today</span></p>
-                </div>
-                <div class="dashboard-actions">
-                    <button class="btn btn-secondary" id="logout-btn">Logout</button>
+                    
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-gold-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Property performance reports
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-gold-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Financial statements and distributions
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-gold-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Investment opportunity updates
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-gold-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Direct communication with management
+                        </li>
+                    </ul>
+                    
+                    <div class="border-t pt-6 text-center">
+                        <p class="text-sm text-gray-600 mb-4">
+                            Interested in learning more about investment opportunities?
+                        </p>
+                        <a href="index.html#contact" 
+                           class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+                            Contact Us
+                        </a>
+                    </div>
                 </div>
             </div>
             
-            <div class="dashboard-content">
-                <!-- Portfolio Overview -->
-                <div class="dashboard-section">
-                    <h3 class="section-title">Portfolio Overview</h3>
-                    <div class="portfolio-cards">
-                        <div class="portfolio-card">
-                            <div class="card-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                </svg>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="card-title">Total Investment</h4>
-                                <p class="card-value">$XXX,XXX</p>
-                                <span class="card-change positive">+X.X% YTD</span>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-card">
-                            <div class="card-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                                </svg>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="card-title">Current Value</h4>
-                                <p class="card-value">$XXX,XXX</p>
-                                <span class="card-change positive">+X.X%</span>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-card">
-                            <div class="card-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M12 6v6l4 2"/>
-                                </svg>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="card-title">Distributions</h4>
-                                <p class="card-value">$XX,XXX</p>
-                                <span class="card-change">This Year</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Property Performance -->
-                <div class="dashboard-section">
-                    <h3 class="section-title">Property Performance</h3>
-                    <div class="performance-table">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Property</th>
-                                    <th>Investment</th>
-                                    <th>Current Value</th>
-                                    <th>Return</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Derita Plaza</td>
-                                    <td>$XXX,XXX</td>
-                                    <td>$XXX,XXX</td>
-                                    <td class="positive">+X.X%</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                </tr>
-                                <tr>
-                                    <td>2710 Gervais</td>
-                                    <td>$XXX,XXX</td>
-                                    <td>$XXX,XXX</td>
-                                    <td class="positive">+X.X%</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Monroe Road</td>
-                                    <td>$XXX,XXX</td>
-                                    <td>$XXX,XXX</td>
-                                    <td class="positive">+X.X%</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-                <!-- Documents & Reports -->
-                <div class="dashboard-section">
-                    <h3 class="section-title">Documents & Reports</h3>
-                    <div class="documents-grid">
-                        <div class="document-item">
-                            <div class="doc-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                    <polyline points="14,2 14,8 20,8"/>
-                                </svg>
-                            </div>
-                            <div class="doc-content">
-                                <h4 class="doc-title">Q4 2024 Report</h4>
-                                <p class="doc-date">December 31, 2024</p>
-                                <a href="#" class="doc-download">Download PDF</a>
-                            </div>
-                        </div>
-                        
-                        <div class="document-item">
-                            <div class="doc-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                    <polyline points="14,2 14,8 20,8"/>
-                                </svg>
-                            </div>
-                            <div class="doc-content">
-                                <h4 class="doc-title">Annual Statement 2024</h4>
-                                <p class="doc-date">January 15, 2025</p>
-                                <a href="#" class="doc-download">Download PDF</a>
-                            </div>
-                        </div>
-                        
-                        <div class="document-item">
-                            <div class="doc-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                    <polyline points="14,2 14,8 20,8"/>
-                                </svg>
-                            </div>
-                            <div class="doc-content">
-                                <h4 class="doc-title">Tax Documents</h4>
-                                <p class="doc-date">Available March 1</p>
-                                <a href="#" class="doc-download">Download ZIP</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Recent Updates -->
-                <div class="dashboard-section">
-                    <h3 class="section-title">Recent Updates</h3>
-                    <div class="updates-feed">
-                        <div class="update-item">
-                            <div class="update-date">Jan 15, 2025</div>
-                            <div class="update-content">
-                                <h4 class="update-title">Melrose Market Lease Signed</h4>
-                                <p class="update-description">2710 Gervais property secures new 5,000 sq ft anchor tenant.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="update-item">
-                            <div class="update-date">Dec 31, 2024</div>
-                            <div class="update-content">
-                                <h4 class="update-title">Q4 Distribution Processed</h4>
-                                <p class="update-description">Quarterly distributions have been processed and will appear in accounts within 3-5 business days.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="update-item">
-                            <div class="update-date">Dec 20, 2024</div>
-                            <div class="update-content">
-                                <h4 class="update-title">Monroe Road Improvements Complete</h4>
-                                <p class="update-description">Facade renovations and parking improvements completed ahead of schedule.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Additional Info -->
+            <div class="text-center text-sm text-gray-500">
+                <p>
+                    Current investors should contact 
+                    <a href="mailto:george@idlewoodcapital.com" class="text-gold-500 hover:text-gold-600 font-medium">
+                        george@idlewoodcapital.com
+                    </a> 
+                    for portal access.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="assets/images/logo.svg" alt="Idlewood Capital" class="footer-logo-image">
-                        <div class="footer-logo-text">
-                            <span class="footer-logo-main">IDLEWOOD</span>
-                            <span class="footer-logo-sub">CAPITAL</span>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Premier private equity real estate investment firm creating 
-                        exceptional value through strategic acquisitions and development.
-                    </p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h5 class="footer-title">Company</h5>
-                        <ul class="footer-list">
-                            <li><a href="index.html#about">About</a></li>
-                            <li><a href="index.html#portfolio">Portfolio</a></li>
-                            <li><a href="index.html#team">Team</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h5 class="footer-title">Investors</h5>
-                        <ul class="footer-list">
-                            <li><a href="investor-portal.html">Portal Access</a></li>
-                            <li><a href="#">Investment Process</a></li>
-                            <li><a href="#">Performance Reports</a></li>
-                            <li><a href="index.html#contact">Contact</a></li>
-                        </ul>
+    <footer class="bg-gray-900 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <img src="assets/images/logo.svg" alt="Idlewood Capital" class="h-8 w-auto filter brightness-0 invert">
+                    <div>
+                        <div class="font-display font-bold">IDLEWOOD</div>
+                        <div class="text-xs font-semibold tracking-wider text-gold-500">CAPITAL</div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2025 Idlewood Capital. All rights reserved.
-                </p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+                <p class="text-gray-400 text-sm">© 2025 Idlewood Capital. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-    <script src="investor-portal.js"></script>
+    <!-- JavaScript for mobile menu -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
