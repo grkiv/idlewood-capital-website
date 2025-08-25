@@ -31,7 +31,10 @@ export default async function handler(req, res) {
         'api-key': apiKey
       },
       body: JSON.stringify({
-        sender: { email: 'no-reply@brevo.com' },
+        sender: { 
+          name: 'Idlewood Capital Website',
+          email: 'george.kornegay@gmail.com' 
+        },
         to: [{ email: 'info@idlewoodcapital.com' }],
         subject: 'Test from Idlewood Capital Website',
         textContent: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
