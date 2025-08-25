@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         sender: {
           name: 'Idlewood Capital',
-          email: 'no-reply@brevo.com'  // Using Brevo's default sender that doesn't need verification
+          email: 'info@idlewoodcapital.com'  // Using authenticated domain
         },
         to: [
           {

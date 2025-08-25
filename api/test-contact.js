@@ -32,8 +32,8 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         sender: { 
-          name: 'Idlewood Capital Website',
-          email: 'george@idlewoodcapital.com' 
+          name: 'Idlewood Capital',
+          email: 'info@idlewoodcapital.com' 
         },
         to: [{ email: 'info@idlewoodcapital.com' }],
         subject: 'Test from Idlewood Capital Website',
