@@ -1,0 +1,238 @@
+INVESTOR PORTAL DEVELOPMENT ROADMAP
+=====================================
+Created: 2025-01-26
+Branch: investor-portal-dev
+
+PROJECT OVERVIEW
+----------------
+Build a secure investor portal where:
+1. Investors can log in and see their specific documents for download
+2. Admin (George) can upload documents for specific investors
+3. Data rooms can be created for temporary prospect access
+4. All access is secure and logged for compliance
+
+CORE REQUIREMENTS (From User)
+-----------------------------
+- "What I want at first is just something investors can log into and see their documents"
+- "I want them to be secure as well"
+- "I also want to be able to create data rooms that I can let people log in to"
+- Simple, focused functionality - not overly complex initially
+
+TECHNICAL STACK (DECIDED)
+-------------------------
+- Frontend: React/Next.js (upgrade from current HTML)
+- Database: Vercel Postgres (free tier initially)
+- File Storage: Vercel Blob or AWS S3
+- Authentication: Custom JWT implementation (no third-party auth services)
+- Email: Brevo (already integrated)
+- Hosting: Vercel (already set up)
+- Estimated Monthly Cost: $0-15 (mostly free tiers)
+
+DEVELOPMENT PHASES
+------------------
+
+PHASE 1: FOUNDATION (Days 1-2)
+-------------------------------
+[ ] Convert site to Next.js framework
+    - Keep existing design/styling
+    - Set up pages structure
+    - Maintain all current functionality
+    
+[ ] Set up database
+    - Users table (id, email, password_hash, role, created_at)
+    - Documents table (id, filename, storage_path, uploaded_by, created_at)
+    - Document_permissions table (document_id, user_id)
+    - Access_logs table (user_id, document_id, action, timestamp)
+    - Data_rooms table (id, name, access_code, expires_at)
+    
+[ ] Authentication system
+    - Secure login/logout with JWT
+    - Password hashing with bcrypt
+    - Session management with timeouts
+    - Role-based access (Admin, Investor, Prospect)
+    - Password reset via email (using Brevo)
+
+PHASE 2: DOCUMENT MANAGEMENT (Days 3-4)
+----------------------------------------
+[ ] File storage setup
+    - Configure Vercel Blob or AWS S3
+    - Implement secure upload with encryption
+    - Generate time-limited download URLs
+    - File organization by investor/folder structure
+    
+[ ] Investor dashboard
+    - Clean document library interface
+    - List only documents they have permission to see
+    - Download functionality with secure URLs
+    - Mobile-responsive design matching current site
+    - Search/filter capabilities
+    
+[ ] Admin panel
+    - Upload documents interface
+    - Assign documents to specific investors
+    - Manage user accounts (create, edit, disable)
+    - View all documents and permissions
+    - Bulk operations support
+
+PHASE 3: DATA ROOMS (Days 5-6)
+-------------------------------
+[ ] Data room functionality
+    - Create data rooms with specific documents
+    - Generate temporary access codes
+    - Set expiration dates
+    - Track access and downloads
+    
+[ ] Prospect access
+    - Login with access code (no account needed)
+    - View only data room documents
+    - Time-limited access
+    - Activity tracking
+
+PHASE 4: SECURITY & COMPLIANCE (Day 7)
+---------------------------------------
+[ ] Security hardening
+    - Input validation and sanitization
+    - SQL injection prevention
+    - XSS protection
+    - CSRF tokens
+    - Rate limiting
+    
+[ ] Compliance features
+    - Audit logging (who accessed what, when)
+    - Access reports for investors
+    - Data retention policies
+    - GDPR compliance basics
+    
+[ ] Testing
+    - Security testing
+    - Cross-browser testing
+    - Mobile responsiveness
+    - Performance optimization
+
+USER FLOWS
+----------
+
+INVESTOR FLOW:
+1. Navigate to investor-portal.html
+2. Login with email/password
+3. See dashboard with their documents
+4. Click document to download
+5. Logout
+
+ADMIN FLOW (George):
+1. Login with admin credentials
+2. See admin dashboard
+3. Upload new document
+4. Select which investors can access it
+5. View access logs
+6. Create data rooms for prospects
+
+PROSPECT FLOW:
+1. Receive access code from George
+2. Go to data room login page
+3. Enter access code
+4. View/download permitted documents
+5. Access expires after set time
+
+SECURITY CONSIDERATIONS
+------------------------
+- Passwords encrypted with bcrypt
+- JWT tokens with expiration
+- Secure file storage with encryption
+- Time-limited download URLs
+- No direct file access
+- All actions logged
+- Session timeouts
+- HTTPS only (handled by Vercel)
+
+DATABASE SCHEMA
+---------------
+users:
+  - id (UUID)
+  - email (unique)
+  - password_hash
+  - role (admin/investor/prospect)
+  - name
+  - company
+  - created_at
+  - last_login
+  - is_active
+
+documents:
+  - id (UUID)
+  - filename
+  - storage_path
+  - file_size
+  - mime_type
+  - uploaded_by
+  - created_at
+  - folder_path
+
+document_permissions:
+  - document_id
+  - user_id
+  - granted_by
+  - granted_at
+
+access_logs:
+  - id
+  - user_id
+  - document_id
+  - action (view/download)
+  - ip_address
+  - timestamp
+
+data_rooms:
+  - id (UUID)
+  - name
+  - access_code (unique)
+  - created_by
+  - expires_at
+  - is_active
+
+data_room_documents:
+  - data_room_id
+  - document_id
+
+CURRENT STATUS
+--------------
+- Branch created: investor-portal-dev
+- No code written yet
+- Ready to begin Phase 1
+
+NEXT STEPS
+----------
+1. Install Next.js and dependencies
+2. Convert existing site to Next.js structure
+3. Set up database connection
+4. Build authentication system
+5. Create basic investor dashboard
+
+NOTES FOR FUTURE CLAUDE SESSIONS
+---------------------------------
+- User prefers simple, focused functionality over complex features
+- Cost consciousness is important (use free tiers where possible)
+- Security is critical given financial/investor nature
+- The site already has Brevo email integration working
+- Main site uses Tailwind CSS via CDN
+- Current nav has "Investor Portal" button styled with gold gradient
+- George's email: george@idlewoodcapital.com
+- Info email: info@idlewoodcapital.com
+- Office: 1515 Mockingbird Ln., Suite 7123, Charlotte, NC 28209
+
+ESTIMATED TIMELINE
+------------------
+Total Development: 7-10 days of active work
+- Can be done incrementally
+- Each phase can be tested independently
+- MVP (basic login + documents) possible in 3-4 days
+
+QUESTIONS TO RESOLVE
+--------------------
+1. Maximum file size for documents?
+2. Document organization (folders/categories)?
+3. How many investors initially?
+4. Email notifications for new documents?
+5. Two-factor authentication needed?
+
+END OF ROADMAP
