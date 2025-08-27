@@ -1,26 +1,29 @@
-export default async function handler(req, res) {
-  // Only allow POST requests
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+import { NextRequest, NextResponse } from 'next/server'
 
-  // Get form data
-  const { name, email, phone, inquiryType, message } = req.body;
-
-  // Validate required fields
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'Missing required fields' });
-  }
-
-  // Get Brevo API key from environment variable
-  const apiKey = process.env.BREVO_API_KEY;
-  
-  if (!apiKey) {
-    console.error('BREVO_API_KEY not configured');
-    return res.status(500).json({ error: 'Email service not configured' });
-  }
-
+export async function POST(request: NextRequest) {
   try {
+    // Get form data
+    const { name, email, phone, inquiryType, message } = await request.json()
+
+    // Validate required fields
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      )
+    }
+
+    // Get Brevo API key from environment variable
+    const apiKey = process.env.BREVO_API_KEY
+    
+    if (!apiKey) {
+      console.error('BREVO_API_KEY not configured')
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      )
+    }
+
     // Send email using Brevo API
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
@@ -70,20 +73,26 @@ export default async function handler(req, res) {
           </div>
         `
       })
-    });
+    })
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Brevo API error:', response.status, errorText);
+      const errorText = await response.text()
+      console.error('Brevo API error:', response.status, errorText)
       
       // Parse common Brevo errors
       if (response.status === 401) {
-        return res.status(500).json({ error: 'Email service authentication failed. Please check API key.' });
+        return NextResponse.json(
+          { error: 'Email service authentication failed. Please check API key.' },
+          { status: 500 }
+        )
       } else if (response.status === 400) {
-        return res.status(500).json({ error: 'Invalid email configuration. Please verify sender email.' });
+        return NextResponse.json(
+          { error: 'Invalid email configuration. Please verify sender email.' },
+          { status: 500 }
+        )
       }
       
-      throw new Error(`Failed to send email: ${errorText}`);
+      throw new Error(`Failed to send email: ${errorText}`)
     }
 
     // Also add contact to Brevo (optional - for CRM features)
@@ -105,16 +114,19 @@ export default async function handler(req, res) {
           },
           updateEnabled: true
         })
-      });
+      })
     } catch (err) {
       // Don't fail if contact creation fails
-      console.log('Contact creation failed (non-critical):', err);
+      console.log('Contact creation failed (non-critical):', err)
     }
 
-    return res.status(200).json({ success: true, message: 'Message sent successfully' });
+    return NextResponse.json({ success: true, message: 'Message sent successfully' })
     
   } catch (error) {
-    console.error('Error sending email:', error);
-    return res.status(500).json({ error: 'Failed to send message. Please try again.' });
+    console.error('Error sending email:', error)
+    return NextResponse.json(
+      { error: 'Failed to send message. Please try again.' },
+      { status: 500 }
+    )
   }
 }

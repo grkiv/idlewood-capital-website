@@ -1,7 +1,21 @@
 {
   "functions": {
-    "api/contact.js": {
+    "src/app/api/contact/route.ts": {
       "maxDuration": 10
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/index.html",
+      "destination": "/"
+    },
+    {
+      "source": "/investor-portal.html",
+      "destination": "/investor-portal"
+    },
+    {
+      "source": "/login-failed.html",
+      "destination": "/login-failed"
+    }
+  ]
 }
