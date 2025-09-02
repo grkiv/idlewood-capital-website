@@ -3,5 +3,11 @@
     "api/contact.js": {
       "maxDuration": 10
     }
+  },
+  "analytics": {
+    "enable": true
+  },
+  "speedInsights": {
+    "enable": true
   }
 }
