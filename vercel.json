@@ -3,5 +3,14 @@
     "api/contact.js": {
       "maxDuration": 10
     }
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "development": true
+    }
+  },
+  "github": {
+    "autoAlias": false
   }
 }
