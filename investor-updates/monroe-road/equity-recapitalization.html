@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idlewood Capital - Monroe Road Equity Recapitalization Proposal</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #4a5568;
+            background: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(197, 165, 114, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 12px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        
+        .logo svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .company-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #c5a572 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .update-title {
+            font-size: 1.25rem;
+            color: #c5a572;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .period {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .report-date {
+            font-size: 0.875rem;
+            color: rgba(197, 165, 114, 0.8);
+            margin-top: 0.25rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Main Content */
+        .content {
+            padding: 0;
+        }
+        
+        .section {
+            padding: 2rem;
+        }
+        
+        .section-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #c5a572;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-subtitle {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+        
+        /* Introduction Section */
+        .introduction {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        /* Key Metrics Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+            padding: 1.75rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            border: 1px solid rgba(197, 165, 114, 0.1);
+            border-top: 4px solid #c5a572;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+        }
+        
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #c5a572 0%, #d4b886 50%, #c5a572 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { background-position: -200% 0; }
+            50% { background-position: 200% 0; }
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .highlight-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #c5a572;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 1px 2px rgba(197, 165, 114, 0.2);
+            line-height: 1.1;
+        }
+        
+        .highlight-label {
+            font-size: 0.9rem;
+            color: #2d3748;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        
+        /* Financial Tables */
+        .financial-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+            font-size: 0.875rem;
+            border: 1px solid rgba(197, 165, 114, 0.15);
+        }
+        
+        .financial-table th {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 50%, #1a1a1a 100%);
+            color: white;
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+        
+        .financial-table th::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #c5a572 0%, #d4b886 50%, #c5a572 100%);
+        }
+        
+        .financial-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid rgba(248, 249, 250, 0.8);
+            vertical-align: top;
+            background: linear-gradient(145deg, transparent 0%, rgba(197, 165, 114, 0.02) 100%);
+            transition: background-color 0.2s ease;
+        }
+        
+        .financial-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .financial-table tbody tr:hover {
+            background: linear-gradient(145deg, rgba(197, 165, 114, 0.04) 0%, rgba(197, 165, 114, 0.08) 100%);
+        }
+        
+        .financial-table tbody tr:hover td {
+            background: transparent;
+        }
+        
+        .table-highlight {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        /* Comparison Table - Wide Format */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+            font-size: 0.875rem;
+            border: 1px solid rgba(197, 165, 114, 0.15);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #c5a572 0%, #d4b886 100%);
+            color: white;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .comparison-table th:first-child {
+            width: 25%;
+        }
+        
+        .comparison-table td {
+            padding: 1.25rem 1rem;
+            line-height: 1.6;
+            vertical-align: top;
+        }
+        
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: #1a1a1a;
+            background: linear-gradient(145deg, rgba(197, 165, 114, 0.03) 0%, rgba(197, 165, 114, 0.06) 100%);
+            vertical-align: top;
+        }
+        
+        .comparison-table td ul {
+            margin: 0;
+            padding-left: 0;
+            list-style-type: none;
+        }
+        
+        .comparison-table td ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .comparison-table td ul li:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Commentary Text */
+        .commentary {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: #2d3748;
+            font-weight: 400;
+        }
+        
+        .commentary p {
+            margin-bottom: 1.25rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .commentary p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .commentary strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        /* Bullet Lists */
+        .bullet-list {
+            margin: 1.5rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .bullet-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 8px;
+            height: 8px;
+            background: #c5a572;
+            border-radius: 50%;
+        }
+        
+        .bullet-list strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        /* Numbered Lists */
+        .numbered-list {
+            margin: 1.5rem 0;
+            padding-left: 0;
+            list-style: none;
+            counter-reset: numbered-counter;
+        }
+        
+        .numbered-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.75;
+            counter-increment: numbered-counter;
+        }
+        
+        .numbered-list li::before {
+            content: counter(numbered-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: #c5a572;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        
+        .numbered-list strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        /* Options Boxes */
+        .option-box {
+            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+            border: 2px solid #c5a572;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+        
+        .option-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+        
+        .option-description {
+            color: #4a5568;
+            line-height: 1.75;
+        }
+        
+        /* Key Performance Indicator */
+        .kpi-inline {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        /* Ensure proper color contrast for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid #c5a572;
+            outline-offset: 2px;
+        }
+        
+        /* Improve table header association */
+        th[scope] {
+            font-weight: 700;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 8px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+        
+        .footer-logo svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .footer-text {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .footer-contact {
+            font-size: 0.875rem;
+            color: #c5a572;
+        }
+        
+        .footer-contact a {
+            color: #c5a572;
+            text-decoration: none;
+        }
+        
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header, .section, .footer {
+                padding: 1.5rem;
+            }
+            
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .financial-table,
+            .comparison-table {
+                font-size: 0.75rem;
+            }
+            
+            .financial-table th,
+            .financial-table td,
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem 0.25rem;
+            }
+        }
+        
+        /* Print Styles for 8.5x11 PDF */
+        :root {
+            --bottom-margin: 0.5625in;  /* Reduced from 0.75in by 25% */
+        }
+
+        @page {
+            size: letter;
+            margin: 0.5625in 0 var(--bottom-margin) 0;  /* Reduced from 0.75in by 25% */
+        }
+
+        @page :first {
+            margin-top: 0;
+            margin-bottom: var(--bottom-margin);
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        /* Conditional margin classes */
+        .tight-layout {
+            --bottom-margin: 0;
+        }
+
+        .standard-layout {
+            --bottom-margin: 0.5625in;  /* Reduced from 0.75in by 25% */
+        }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            body {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+                font-size: 12pt;
+                line-height: 1.4;
+                background: white !important;
+                display: flex !important;
+                flex-direction: column !important;
+                min-height: 100vh !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%) !important;
+                color: white !important;
+                padding: 1.5rem !important;
+                margin: 0 !important;
+                width: 100% !important;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .header::before {
+                display: none;
+            }
+            
+            .company-name {
+                font-size: 18pt !important;
+                background: linear-gradient(135deg, #ffffff 0%, #c5a572 100%) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                background-clip: text !important;
+            }
+            
+            .update-title {
+                font-size: 11pt !important;
+                color: #c5a572 !important;
+            }
+            
+            .period {
+                font-size: 10pt !important;
+            }
+            
+            .report-date {
+                font-size: 8pt !important;
+                color: rgba(197, 165, 114, 0.8) !important;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                padding: 1.25rem !important;
+                margin: 0 !important; /* Remove content margins since @page now handles margins */
+            }
+            
+            .section:first-of-type {
+                page-break-before: avoid;
+            }
+            
+            .section-title {
+                font-size: 14pt !important;
+                color: #1a1a1a !important;
+                page-break-after: avoid;
+            }
+            
+            .section-subtitle {
+                font-size: 10pt !important;
+                page-break-after: avoid;
+            }
+            
+            .highlights-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 1rem !important;
+                page-break-inside: avoid;
+            }
+            
+            .highlight-card {
+                background: white !important;
+                border: 1px solid #e5e7eb !important;
+                border-top: 3px solid #c5a572 !important;
+                page-break-inside: avoid;
+            }
+            
+            .highlight-number {
+                font-size: 16pt !important;
+                color: #c5a572 !important;
+            }
+            
+            .highlight-label {
+                font-size: 9pt !important;
+            }
+            
+            .financial-table,
+            .comparison-table {
+                width: 100% !important;
+                font-size: 8pt !important;
+                page-break-inside: avoid;
+                background: white !important;
+            }
+            
+            .financial-table th,
+            .comparison-table th {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%) !important;
+                color: white !important;
+                font-size: 8pt !important;
+                padding: 0.4rem !important;
+            }
+            
+            .financial-table td,
+            .comparison-table td {
+                padding: 0.4rem !important;
+                border-bottom: 1px solid #f8f9fa !important;
+                font-size: 8pt !important;
+            }
+            
+            .commentary {
+                font-size: 10pt !important;
+                line-height: 1.5 !important;
+            }
+            
+            .kpi-inline {
+                font-weight: 700 !important;
+                color: #1a1a1a !important;
+            }
+            
+            .option-box {
+                page-break-inside: avoid !important;
+            }
+            
+            .footer {
+                display: none !important;
+            }
+            
+            /* Keep last section together */
+            .section:last-of-type {
+                page-break-inside: avoid !important;
+                margin-bottom: 0 !important;
+            }
+            
+            /* Prevent orphaned headers */
+            h2, h3 {
+                page-break-after: avoid !important;
+            }
+            
+            /* Keep option boxes intact */
+            .option-box {
+                page-break-inside: avoid !important;
+            }
+            
+            .footer-text {
+                font-size: 9pt !important;
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+            
+            .footer-contact {
+                font-size: 9pt !important;
+                color: #c5a572 !important;
+            }
+            
+            .footer-contact a {
+                color: #c5a572 !important;
+            }
+            
+            /* Force page breaks at strategic points */
+            .introduction {
+                page-break-after: avoid;
+            }
+            
+            /* Ensure long sections can break appropriately */
+            .section.long-content {
+                page-break-inside: auto;
+            }
+            
+            /* Hide elements that don't print well */
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0, 0, 400,400">
+                    <path d="M183.796 41.055 C 76.067 51.093,10.876 170.730,59.191 269.727 C 114.643 383.345,270.232 390.025,334.997 281.569 C 384.258 199.077,348.855 89.568,260.963 52.564 C 238.207 42.984,209.328 38.677,183.796 41.055 M212.305 49.631 C 301.679 57.336,363.212 140.234,345.666 229.297 C 325.192 333.221,206.606 384.159,119.531 326.432 C 39.228 273.194,28.296 158.336,97.121 90.987 C 122.569 66.085,151.068 53.163,188.672 49.478 C 191.938 49.158,208.024 49.262,212.305 49.631 M194.818 82.520 C 159.071 117.710,150.858 154.174,172.024 183.721 C 177.890 191.908,189.114 203.095,192.286 203.915 C 193.199 204.150,194.253 204.433,194.629 204.542 C 195.277 204.730,195.313 202.638,195.313 164.486 L 195.313 124.231 196.419 122.993 C 198.207 120.991,201.431 120.885,203.312 122.765 L 204.688 124.141 204.688 164.414 C 204.688 192.455,204.813 204.688,205.100 204.688 C 210.943 204.688,227.760 186.535,233.780 173.730 C 246.991 145.628,237.409 114.935,205.374 82.736 C 199.765 77.099,200.313 77.110,194.818 82.520 M84.766 171.060 C 82.953 171.253,82.599 171.420,82.498 172.128 C 82.043 175.316,86.553 199.507,89.259 208.398 C 100.603 245.666,129.488 268.119,161.914 264.875 C 168.351 264.231,176.953 262.055,176.953 261.071 C 176.953 260.535,137.573 224.329,121.225 209.835 C 113.283 202.793,112.704 201.417,116.383 198.322 C 119.411 195.773,118.803 195.351,140.971 215.394 C 148.359 222.074,158.490 231.230,163.484 235.742 C 168.478 240.254,174.434 245.685,176.720 247.810 C 179.006 249.936,180.963 251.589,181.068 251.484 C 181.752 250.800,182.149 242.675,181.721 238.132 C 178.367 202.545,154.653 179.337,114.453 172.300 C 106.121 170.842,92.241 170.262,84.766 171.060 M294.531 171.120 C 264.815 174.366,239.812 187.769,228.463 206.536 C 220.670 219.423,216.660 237.174,218.625 250.086 C 218.903 251.912,218.343 252.304,227.402 243.945 C 237.597 234.537,264.806 209.947,273.047 202.693 C 280.254 196.348,283.363 195.685,285.197 200.101 C 286.425 203.058,286.599 202.836,275.000 213.140 C 259.538 226.876,248.825 236.681,224.835 259.050 L 222.461 261.264 223.974 261.907 C 227.930 263.589,234.585 264.767,241.992 265.097 C 273.375 266.494,301.453 242.624,311.547 205.965 C 315.305 192.317,318.534 172.675,317.234 171.375 C 316.686 170.826,299.034 170.628,294.531 171.120 M194.748 216.504 C 194.666 216.772,193.612 234.219,192.406 255.273 C 191.200 276.328,190.042 296.049,189.833 299.097 C 189.624 302.145,189.453 306.131,189.453 307.955 L 189.453 311.271 190.918 312.486 C 195.528 316.307,205.378 315.961,208.987 311.851 C 210.482 310.149,210.491 311.506,208.787 281.411 C 207.557 259.670,206.255 235.266,205.644 222.461 C 205.302 215.296,205.934 216.016,199.980 216.016 C 196.254 216.016,194.858 216.146,194.748 216.504" 
+                    fill="#c5a572"/>
+                </svg>
+            </div>
+            <h1 class="company-name">IDLEWOOD CAPITAL</h1>
+            <p class="update-title">Equity Recapitalization Proposal</p>
+            <p class="period">Monroe Road Investors, LLC</p>
+            <p class="report-date">Strategic Partnership Evolution - Q3 2025</p>
+        </div>
+    </div>
+    
+    <div class="content">
+        <!-- Introduction -->
+        <section class="section introduction">
+            <div class="section-header">
+                <h2 class="section-title">Proposed Equity Recapitalization</h2>
+                <p class="section-subtitle">A strategic opportunity at the five-year milestone</p>
+            </div>
+            
+            <div class="commentary">
+                <p>Dear Investors,</p>
+                
+                <p>Alongside the attached Q3 2025 Investor Update, we are presenting a proposal for the next phase of this investment: an equity recapitalization of Monroe Road Investors, LLC. The original business plan anticipated a five-year hold period, and that milestone will be reached next month. Over this time, the property has been fully repositioned, with more than <span class="kpi-inline">$1.2 million</span> of improvements, strong new leases, and market rent growth that reinforces its long-term value.</p>
+                
+                <p>This recapitalization is designed with three objectives. First, it provides each investor with the option to receive a cash distribution economically equivalent to a sale at today's independently appraised value of <span class="kpi-inline">$5.72 million</span>. Second, it allows investors who wish to remain invested to continue participating in future cash flow and appreciation on a newly established equity base. Third, it refines the ongoing fee structure to ensure continued alignment between the general partners and investors and to support active long-term management of the property.</p>
+                
+                <p>The sections that follow outline why this recapitalization makes strategic sense at this point in the investment, the current property and market fundamentals, the valuation basis, the proposed capital structure, and the specific options available to each investor.</p>
+            </div>
+        </section>
+        
+        <!-- Why Recapitalize Now -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Why a Recapitalization Now</h2>
+                <p class="section-subtitle">Strategic timing and compelling fundamentals</p>
+            </div>
+            
+            <div class="commentary">
+                <p>This is an ideal moment to recapitalize the Monroe Road investment. Several factors make the timing and structure compelling:</p>
+                
+                <ul class="bullet-list">
+                    <li><strong>Five-year milestone</strong> - The original investment plan anticipated a five-year hold, and that horizon is now reached. We have executed the business plan ahead of expectations and created durable value.</li>
+                    
+                    <li><strong>Value creation complete</strong> - More than $1.2 million has been invested in two major construction phases, resulting in a fully repositioned property. New long-term leases with Apotheca and Angry Ales, together with a stable 4732 tenant mix, position the property for strong cash flow and embedded rent growth.</li>
+                    
+                    <li><strong>Market strength</strong> - Charlotte's retail fundamentals remain exceptional. Low vacancy, limited new supply, and rising rents (particularly in the Oakhurst/Monroe Road corridor) support continued appreciation and provide upside when existing below-market leases roll.</li>
+                    
+                    <li><strong>Favorable financing window</strong> - We have secured financing with a blended interest rate of roughly 4.9 percent that remains fixed through December 2028. This cost of capital is well below current market rates and provides a multi-year window of rate certainty to support cash flow and growth.</li>
+                    
+                    <li><strong>Modernized structure and enhanced sponsor commitment</strong> - The property is fundamentally different from when we acquired it, and the proposed financing structure requires significantly more personal guarantees from the sponsors than originally anticipated. Total project debt will reach $3.34 million compared to the initial plan of $1.25 million, representing substantially increased personal risk and liability for the general partners. A recapitalization allows us to refine the fee structure to reflect both current market standards and the present scale and complexity of the asset, while maintaining clear alignment between the general partners and investors for the next stage of ownership.</li>
+                </ul>
+                
+                <p>Taken together, these factors make a recapitalization the most strategic way to capture the value created to date, provide liquidity to those who want it, and position the partnership for continued success in the years ahead.</p>
+            </div>
+        </section>
+        
+        <!-- Property & Market Highlights -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Property & Market Highlights</h2>
+                <p class="section-subtitle">Five years of transformation and value creation</p>
+            </div>
+            
+            <div class="commentary">
+                <p>The Monroe Road property today is stronger and more valuable than at any point in its history. Over the past five years we have transformed the asset through targeted investment and active management:</p>
+                
+                <ul class="bullet-list">
+                    <li><strong>Capital improvements</strong> - More than $1.2 million invested across two major construction phases, including a full renovation of the 4726 building and substantial upgrades to the 4732 building. Both now feature new roofs, modern HVAC and electrical systems, improved façades, and other infrastructure enhancements.</li>
+                    
+                    <li><strong>Leasing strength</strong> - The property is anchored by a stable core of tenants in the 4732 building (Singas Pizza, The Photo Outfitters, and Lemonade Fitness), operating on triple-net leases with annual rent increases. New long-term leases with Apotheca and Angry Ales further diversify and strengthen cash flow, with Apotheca commencing rent in October 2025 and Angry Ales expected to open in early spring 2026. Several of the 4732 leases are now below current market rents, providing built-in upside when they renew or roll.</li>
+                    
+                    <li><strong>Market momentum</strong> - Charlotte's retail fundamentals remain exceptionally strong. Vacancy rates are near historic lows, new construction is limited, and the Oakhurst/Monroe Road corridor continues to benefit from robust population and income growth. Asking rents for comparable space have risen significantly in the past two years, supporting both near-term income and long-term appreciation.</li>
+                </ul>
+                
+                <p>These improvements and market dynamics provide a solid foundation for the proposed recapitalization. They also reinforce that the property is well positioned for stable cash flow today and for meaningful rent growth and value creation in the years ahead.</p>
+            </div>
+        </section>
+        
+        <!-- Valuation Basis -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Valuation Basis</h2>
+                <p class="section-subtitle">Independent third-party appraisal provides transparent foundation</p>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-number">$5.72M</div>
+                    <div class="highlight-label">Appraised Value</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-number">58%</div>
+                    <div class="highlight-label">Loan-to-Value</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-number">$2.38M</div>
+                    <div class="highlight-label">Total Equity</div>
+                </div>
+            </div>
+            
+            <div class="commentary">
+                <p>The recapitalization proposal is anchored by a recent third-party valuation. On September 2, 2025, Integra Realty Resources completed an independent appraisal of the Monroe Road property, concluding an as-is market value of <span class="kpi-inline">$5.72 million</span>.</p>
+                
+                <p>This appraisal reflects the property's current income, tenant strength, and market conditions and provides a transparent, market-supported foundation for all calculations in this recapitalization. The proposed capital structure, projected distributions, and the investor options outlined in the following sections are all built on this appraised value.</p>
+            </div>
+        </section>
+        
+        <!-- Proposed Capital Structure -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Proposed Capital Structure</h2>
+                <p class="section-subtitle">Strategic leverage with below-market fixed-rate debt</p>
+            </div>
+            
+            <div class="commentary">
+                <p>The recapitalization is structured to keep the property's balance sheet strong while providing significant cash to investors and a clear equity base for the next stage of ownership. It combines the current first-lien mortgage with a second-lien loan scheduled to close this month:</p>
+            </div>
+            
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Loan</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Terms</th>
+                        <th scope="col">Maturity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-highlight">First-lien loan</td>
+                        <td>$1,694,395</td>
+                        <td>3.45%</td>
+                        <td>25-year amortization</td>
+                        <td>Dec 2028</td>
+                    </tr>
+                    <tr>
+                        <td class="table-highlight">Second-lien loan</td>
+                        <td>$1,650,000</td>
+                        <td>6.50%</td>
+                        <td>25-year amort. (12 mo. I/O)</td>
+                        <td>Dec 2028</td>
+                    </tr>
+                    <tr style="background: linear-gradient(135deg, #c5a572 0%, #d4b886 100%); color: white; font-weight: 700;">
+                        <td style="background: transparent; border-bottom: none; padding: 1.25rem 0.75rem; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);">Total Debt</td>
+                        <td style="background: transparent; border-bottom: none; padding: 1.25rem 0.75rem; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);">$3,344,395</td>
+                        <td style="background: transparent; border-bottom: none; padding: 1.25rem 0.75rem; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);">~4.9% blended</td>
+                        <td style="background: transparent; border-bottom: none; padding: 1.25rem 0.75rem; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);">25 years</td>
+                        <td style="background: transparent; border-bottom: none; padding: 1.25rem 0.75rem; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);">Dec 2028</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="commentary">
+                <p>After funding and paying off interim obligations, total property debt will stand at roughly <span class="kpi-inline">$3,344,395</span>, resulting in a loan-to-value ratio of about <span class="kpi-inline">58%</span> based on the $5.72 million appraisal.</p>
+                
+                <p><strong>Proceeds from the new loan will be applied as follows:</strong></p>
+                
+                <ul class="bullet-list">
+                    <li>Retire approximately <span class="kpi-inline">$442,571</span> of accounts payable (including construction payables and leasing commissions)</li>
+                    <li>Fund a preferred return catch-up of <span class="kpi-inline">$45,600</span></li>
+                    <li>Return the entire <span class="kpi-inline">$570,000</span> initial investment to investors</li>
+                    <li>Pay a <span class="kpi-inline">2%</span> recapitalization fee to the sponsors</li>
+                    <li>Cover closing costs of roughly <span class="kpi-inline">$23,250</span> and fund a working-capital reserve of <span class="kpi-inline">$25,000</span></li>
+                </ul>
+                
+                <p>These uses of funds are cash distributions and operating reserves funded from new debt. They do not reduce the property's equity base, which remains the difference between the appraised value and total post-recap debt. After the recapitalization the partnership would own the property with an equity value of approximately <span class="kpi-inline">$2,375,605</span> ($5.72 million appraised value less $3.34 million total debt).</p>
+                
+                <p>As part of this proposal, the existing promote structure would be converted into an equity position, with <span class="kpi-inline">35%</span> of the total equity allocated to the general partners and <span class="kpi-inline">65%</span> (about <span class="kpi-inline">$1.54 million</span>) remaining with the limited partners. This conversion ensures the general partners' interests are directly tied to the ongoing ownership and long-term performance of the property, while establishing a clear equity base for calculating each investor's continuing ownership and future distributions.</p>
+                
+                <p style="font-size: 0.8rem; color: #6b7280; margin-top: 1.5rem; padding-top: 0.75rem; font-style: italic;">
+                    * All amounts shown are estimates based on current projections and are subject to adjustment upon finalization of loan closing costs and other transaction expenses.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Investor Options -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Investor Options</h2>
+                <p class="section-subtitle">Flexible choices tailored to individual investment objectives</p>
+            </div>
+            
+            <div class="commentary">
+                <p>This recapitalization is designed to let each investor tailor their participation to individual objectives. At closing, investors will be able to choose among the following paths:</p>
+            </div>
+            
+            <div class="option-box">
+                <h3 class="option-title">Option A – Cash Out (Sale-Equivalent Liquidity)</h3>
+                <div class="option-description">
+                    <p>Elect to receive a cash distribution economically equivalent to what a sale today would provide, based on the $5.72 million appraisal and the current partnership waterfall. This payout includes full return of capital, all accrued preferred return, and each investor's pro-rata share of distributable profits. For example, a 50,000-share investor would receive an estimated total of approximately <span class="kpi-inline">$203,627</span>.*</p>
+                    
+                    <p style="font-size: 0.75rem; color: #6b7280; margin-top: 0.75rem; font-style: italic;">
+                        * Subject to final closing adjustments and finalization of all transaction costs.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="option-box">
+                <h3 class="option-title">Option B – Remain Invested</h3>
+                <div class="option-description">
+                    <p>Elect to continue in the investment and participate in future cash flow and appreciation. Investors choosing this option will receive a partial distribution at closing (consisting of their accrued preferred return, the full return of their original capital, and their share of current distributable profits) while rolling their remaining ownership into the recapitalized entity. The rolled amount will represent each investor's share of the limited partners' equity base of about $1.54 million, benefiting from the new capital structure and ongoing market upside.</p>
+                </div>
+            </div>
+            
+            <div class="option-box">
+                <h3 class="option-title">Option C – Increase Investment Level</h3>
+                <div class="option-description">
+                    <p>Subject to availability and final documentation, investors may request to increase their investment beyond their current pro-rata share. Allocation priority for any additional equity will be given to the sponsors and existing investors before any potential outside capital is considered.</p>
+                </div>
+            </div>
+            
+            <div class="option-box">
+                <h3 class="option-title">Option D – Partial Cash Out</h3>
+                <div class="option-description">
+                    <p>Elect to reduce your ongoing investment while maintaining a smaller ownership position in the recapitalized entity. This option allows you to receive a partial cash distribution while continuing to participate in future cash flow and appreciation at a reduced level that fits your investment objectives.</p>
+                </div>
+            </div>
+            
+            <div class="commentary">
+                <p>Each option is designed to provide flexibility while maintaining fairness and transparency. All elections will be reflected in the final recapitalization agreements, which will proceed only upon investor approval.</p>
+            </div>
+        </section>
+        
+        <!-- Post-Recap Partnership Structure -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Post-Recap Partnership Structure</h2>
+                <p class="section-subtitle">Simplified waterfall with clear alignment</p>
+            </div>
+            
+            <div class="commentary">
+                <p><strong>Equity & Contributions</strong></p>
+                
+                <ul class="bullet-list">
+                    <li>Total equity after recapitalization will be approximately <span class="kpi-inline">$2.38 million</span> (based on a $5.72 million appraisal and $3.34 million total debt)</li>
+                    <li>All equity will be treated as Limited Partner equity on a <span class="kpi-inline">pari passu</span> basis</li>
+                    <li>The general partners will participate in the equity alongside all other investors</li>
+                    <li>The existing 35% promote structure will be retained for distributions beyond the preferred return and capital recovery</li>
+                </ul>
+                
+                <p><strong>Preferred Return</strong></p>
+                <p>8.0% annual, non-compounding preferred return will be paid on all equity, pari passu.</p>
+                
+                <p><strong>Cash Flow & Capital Event Waterfalls</strong></p>
+                <p>After operating expenses and debt service, distributions will follow this sequence:</p>
+                
+                <ol class="numbered-list">
+                    <li><strong>Preferred Return to All Equity</strong> - 8% annual on all invested capital, paid current and catch-up if necessary, pari passu</li>
+                    <li><strong>Return of All Capital</strong> - 100% of all invested capital, pari passu</li>
+                    <li><strong>Promoted Distributions</strong> - All remaining cash flow and sale or refinance proceeds will be distributed 35% to the General Partners and 65% to all Limited Partners pro rata based on their equity ownership</li>
+                </ol>
+                
+                <p>This updated framework simplifies the structure while preserving key protections (preferred return and full capital recovery) yet clearly defines how the former promote is converted into a permanent equity interest. It keeps the partnership aligned and transparent as the property enters its next phase of income and appreciation.</p>
+            </div>
+        </section>
+        
+        
+        <!-- Structure Comparison -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Structure Comparison</h2>
+                <p class="section-subtitle">Original structure versus proposed recapitalization</p>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Original Structure (at acquisition)</th>
+                        <th>Proposed Structure (post-recap)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Equity</td>
+                        <td><strong>$570,000</strong></td>
+                        <td><strong>≈ $2.38 million</strong><br><span style="font-size: 0.8rem; color: #6b7280;">(based on $5.72M value and $3.34M debt)</span></td>
+                    </tr>
+                    <tr>
+                        <td>Equity Composition</td>
+                        <td>
+                            <ul>
+                                <li><strong>All equity treated as LP</strong> on pari passu basis<br><span style="font-size: 0.8rem; color: #6b7280;">(GP $70,000 + LP $500,000 = $570,000 total)</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><strong>All equity treated as LP</strong> on pari passu basis<br><span style="font-size: 0.8rem; color: #6b7280;">(GP participates alongside all other investors)</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Preferred Return</td>
+                        <td><strong>8% annual</strong>, non-compounding<br><span style="font-size: 0.8rem; color: #6b7280;">Paid pari passu to all equity</span></td>
+                        <td><strong>8% annual</strong>, non-compounding<br><span style="font-size: 0.8rem; color: #6b7280;">Paid pari passu to all equity</span></td>
+                    </tr>
+                    <tr>
+                        <td>Capital Return<br><span style="font-size: 0.8rem; color: #6b7280;">(before promote)</span></td>
+                        <td>100% of invested capital<br><span style="font-size: 0.8rem; color: #6b7280;">GP & LP returned pari passu<br><strong>Only on capital events</strong> (sale/refi)<br>Operating cash flow went directly to promote after pref</span></td>
+                        <td>
+                            <div style="line-height: 1.6;">
+                                100% of all invested capital<br>
+                                <span style="font-size: 0.8rem; color: #6b7280;">Returned pari passu<br><strong>Applies to all distributions</strong> (operations and capital events)</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Promote /<br>Carried Interest</td>
+                        <td><strong>35% GP / 65% LP</strong><br><span style="font-size: 0.8rem; color: #6b7280;"><strong>Operations:</strong> After preferred return only<br><strong>Capital events:</strong> After preferred return and capital return</span></td>
+                        <td><strong>35% GP / 65% LP</strong><br><span style="font-size: 0.8rem; color: #6b7280;"><strong>All distributions:</strong> After preferred return and capital return</span></td>
+                    </tr>
+                    <tr>
+                        <td>Sponsor Fees</td>
+                        <td>
+                            <ul>
+                                <li><strong>Acquisition fee:</strong> $50,000<br><span style="font-size: 0.8rem; color: #6b7280;">(funded as GP equity)</span></li>
+                                <li><strong>Asset/Property mgmt:</strong> 4%<br><span style="font-size: 0.8rem; color: #6b7280;">(of base rental income)</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><strong>Recap fee:</strong> 2% one-time<br><span style="font-size: 0.8rem; color: #6b7280;">(on appraised value)</span></li>
+                                <li><strong>Asset/mgmt fee:</strong> 1.5% ongoing<br><span style="font-size: 0.8rem; color: #6b7280;">(of total equity)</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Projected Returns -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Projected Returns - 50,000 Share Investment</h2>
+                <p class="section-subtitle">Comparative analysis of stay-in versus cash-out scenarios</p>
+            </div>
+            
+            <div class="commentary">
+                <p>The following projections illustrate the potential returns for a representative <span class="kpi-inline">50,000-share investor</span> under both investment scenarios. These projections are based on conservative assumptions and the property's expected performance under the proposed capital structure.</p>
+                
+                <p style="font-size: 0.8rem; color: #6b7280; margin-top: 1.5rem; padding-top: 0.75rem; font-style: italic;">
+                    * All financial projections, return calculations, and distribution amounts shown are current estimates based on available information and are subject to change as loan closing costs, final transaction expenses, and other projections are finalized. Actual results may vary significantly from these projections.
+                </p>
+            </div>
+            
+            <table class="financial-table" style="margin-bottom: 2rem;">
+                <thead>
+                    <tr>
+                        <th style="width: 25%; text-align: left;">Scenario</th>
+                        <th style="width: 12.5%; text-align: center;">Year 0</th>
+                        <th style="width: 12.5%; text-align: center;">Year 1</th>
+                        <th style="width: 12.5%; text-align: center;">Year 2</th>
+                        <th style="width: 12.5%; text-align: center;">Year 3</th>
+                        <th style="width: 12.5%; text-align: center;">Year 4</th>
+                        <th style="width: 12.5%; text-align: center;">Year 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: linear-gradient(135deg, rgba(197, 165, 114, 0.08) 0%, rgba(197, 165, 114, 0.04) 100%); font-weight: 600;">
+                        <td style="color: #1a1a1a; text-align: left;">Stay In</td>
+                        <td style="text-align: center;">$78,471</td>
+                        <td style="text-align: center;">$6,075</td>
+                        <td style="text-align: center;">$7,904</td>
+                        <td style="text-align: center;">$6,017</td>
+                        <td style="text-align: center;">$10,797</td>
+                        <td style="text-align: center;">$254,896</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #1a1a1a; text-align: left;">Cash Out</td>
+                        <td style="text-align: center;">$203,627</td>
+                        <td style="text-align: center;">$0</td>
+                        <td style="text-align: center;">$0</td>
+                        <td style="text-align: center;">$0</td>
+                        <td style="text-align: center;">$0</td>
+                        <td style="text-align: center;">$0</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table class="financial-table" style="margin-bottom: 2rem;">
+                <thead>
+                    <tr>
+                        <th style="width: 25%; text-align: left;">Analysis</th>
+                        <th style="width: 12.5%; text-align: center;">Year 0</th>
+                        <th style="width: 12.5%; text-align: center;">Year 1</th>
+                        <th style="width: 12.5%; text-align: center;">Year 2</th>
+                        <th style="width: 12.5%; text-align: center;">Year 3</th>
+                        <th style="width: 12.5%; text-align: center;">Year 4</th>
+                        <th style="width: 12.5%; text-align: center;">Year 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="color: #1a1a1a; text-align: left;">Net Difference</td>
+                        <td style="text-align: center;">-$125,157</td>
+                        <td style="text-align: center;">$6,075</td>
+                        <td style="text-align: center;">$7,904</td>
+                        <td style="text-align: center;">$6,017</td>
+                        <td style="text-align: center;">$10,797</td>
+                        <td style="text-align: center;">$254,896</td>
+                    </tr>
+                    <tr style="background: linear-gradient(135deg, rgba(197, 165, 114, 0.08) 0%, rgba(197, 165, 114, 0.04) 100%); font-weight: 600;">
+                        <td style="color: #1a1a1a; text-align: left;">Cash on Cash Return</td>
+                        <td style="text-align: center;">—</td>
+                        <td style="text-align: center;">4.85%</td>
+                        <td style="text-align: center;">6.32%</td>
+                        <td style="text-align: center;">4.81%</td>
+                        <td style="text-align: center;">8.63%</td>
+                        <td style="text-align: center;">203.66%</td>
+                    </tr>
+                    <tr style="background: linear-gradient(135deg, #c5a572 0%, #d4b886 100%); color: white; font-weight: 700;">
+                        <td style="background: transparent; border-bottom: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); text-align: left;">IRR (Stay In)</td>
+                        <td style="background: transparent; border-bottom: none; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); text-align: center;" colspan="6">19.27%</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlights-grid" style="margin-top: 1.5rem;">
+                <div class="highlight-card">
+                    <div class="highlight-number">19.27%</div>
+                    <div class="highlight-label">Projected IRR<br><span style="font-size: 0.7rem; opacity: 0.8;">(Stay In Scenario)</span></div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-number">$203,627</div>
+                    <div class="highlight-label">Immediate Cash Out<br><span style="font-size: 0.7rem; opacity: 0.8;">(50,000 shares)</span></div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-number">$364,160</div>
+                    <div class="highlight-label">Total Return<br><span style="font-size: 0.7rem; opacity: 0.8;">(Stay In through Year 5)</span></div>
+                </div>
+            </div>
+            
+            <div class="commentary">
+                <p>These projections assume a hypothetical sale in Year 5 and are based on conservative market assumptions. Actual performance may vary based on market conditions, tenant performance, and other factors beyond our control.</p>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Conclusion</h2>
+                <p class="section-subtitle">A strategic opportunity for the next phase of ownership</p>
+            </div>
+            
+            <div class="commentary">
+                <p>This recapitalization represents a pivotal moment in the Monroe Road investment. Over the past five years, we have successfully transformed an underperforming property into a stabilized, income-producing asset with significant embedded value. The property now stands fully repositioned, with strong tenants, below-market in-place rents providing upside potential, and a capital structure that supports both current income and long-term appreciation.</p>
+                
+                <p>The flexibility built into this proposal ensures that each investor can choose the path that best aligns with their individual investment objectives and liquidity needs. Whether electing immediate liquidity at full value, continuing to participate in future growth, adjusting exposure levels, or exploring increased investment, every option has been structured to be fair, transparent, and economically sound.</p>
+                
+                <p>We believe the Monroe Road property is exceptionally well-positioned for continued success. The combination of Charlotte's strong market fundamentals, the property's prime location in the thriving Oakhurst corridor, our proven tenant mix, and the favorable fixed-rate financing we have secured creates a compelling foundation for the years ahead.</p>
+                
+                <p>Thank you for your careful consideration of this proposal. We are confident that the structure presented here provides the best path forward for all stakeholders and represents a prudent and strategic approach to maximizing the value of the Monroe Road investment.</p>
+            </div>
+        </section>
+        
+        <!-- Signature Block -->
+        <section class="section" style="border-bottom: none; padding-bottom: 1rem;">
+            <div style="margin-top: 2rem; text-align: left;">
+                <p style="margin-bottom: 2rem; color: #2d3748; font-size: 1rem; line-height: 1.6;">
+                    Sincerely,
+                </p>
+                
+                <div style="color: #1a1a1a; font-weight: 600; line-height: 1.8;">
+                    <p style="margin-bottom: 0.5rem;">George Kornegay</p>
+                    <p style="margin-bottom: 1.5rem; color: #4a5568; font-weight: 400; font-size: 0.95rem;">Idlewood Capital</p>
+                    
+                    <p style="margin-bottom: 0.5rem;">Andy Henson</p>
+                    <p style="margin-bottom: 0; color: #4a5568; font-weight: 400; font-size: 0.95rem;">JTE Investments</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0, 0, 400,400">
+                    <path d="M183.796 41.055 C 76.067 51.093,10.876 170.730,59.191 269.727 C 114.643 383.345,270.232 390.025,334.997 281.569 C 384.258 199.077,348.855 89.568,260.963 52.564 C 238.207 42.984,209.328 38.677,183.796 41.055 M212.305 49.631 C 301.679 57.336,363.212 140.234,345.666 229.297 C 325.192 333.221,206.606 384.159,119.531 326.432 C 39.228 273.194,28.296 158.336,97.121 90.987 C 122.569 66.085,151.068 53.163,188.672 49.478 C 191.938 49.158,208.024 49.262,212.305 49.631 M194.818 82.520 C 159.071 117.710,150.858 154.174,172.024 183.721 C 177.890 191.908,189.114 203.095,192.286 203.915 C 193.199 204.150,194.253 204.433,194.629 204.542 C 195.277 204.730,195.313 202.638,195.313 164.486 L 195.313 124.231 196.419 122.993 C 198.207 120.991,201.431 120.885,203.312 122.765 L 204.688 124.141 204.688 164.414 C 204.688 192.455,204.813 204.688,205.100 204.688 C 210.943 204.688,227.760 186.535,233.780 173.730 C 246.991 145.628,237.409 114.935,205.374 82.736 C 199.765 77.099,200.313 77.110,194.818 82.520 M84.766 171.060 C 82.953 171.253,82.599 171.420,82.498 172.128 C 82.043 175.316,86.553 199.507,89.259 208.398 C 100.603 245.666,129.488 268.119,161.914 264.875 C 168.351 264.231,176.953 262.055,176.953 261.071 C 176.953 260.535,137.573 224.329,121.225 209.835 C 113.283 202.793,112.704 201.417,116.383 198.322 C 119.411 195.773,118.803 195.351,140.971 215.394 C 148.359 222.074,158.490 231.230,163.484 235.742 C 168.478 240.254,174.434 245.685,176.720 247.810 C 179.006 249.936,180.963 251.589,181.068 251.484 C 181.752 250.800,182.149 242.675,181.721 238.132 C 178.367 202.545,154.653 179.337,114.453 172.300 C 106.121 170.842,92.241 170.262,84.766 171.060 M294.531 171.120 C 264.815 174.366,239.812 187.769,228.463 206.536 C 220.670 219.423,216.660 237.174,218.625 250.086 C 218.903 251.912,218.343 252.304,227.402 243.945 C 237.597 234.537,264.806 209.947,273.047 202.693 C 280.254 196.348,283.363 195.685,285.197 200.101 C 286.425 203.058,286.599 202.836,275.000 213.140 C 259.538 226.876,248.825 236.681,224.835 259.050 L 222.461 261.264 223.974 261.907 C 227.930 263.589,234.585 264.767,241.992 265.097 C 273.375 266.494,301.453 242.624,311.547 205.965 C 315.305 192.317,318.534 172.675,317.234 171.375 C 316.686 170.826,299.034 170.628,294.531 171.120 M194.748 216.504 C 194.666 216.772,193.612 234.219,192.406 255.273 C 191.200 276.328,190.042 296.049,189.833 299.097 C 189.624 302.145,189.453 306.131,189.453 307.955 L 189.453 311.271 190.918 312.486 C 195.528 316.307,205.378 315.961,208.987 311.851 C 210.482 310.149,210.491 311.506,208.787 281.411 C 207.557 259.670,206.255 235.266,205.644 222.461 C 205.302 215.296,205.934 216.016,199.980 216.016 C 196.254 216.016,194.858 216.146,194.748 216.504" 
+                    fill="#c5a572"/>
+                </svg>
+            </div>
+            <p class="footer-text">
+                Disciplined asset management • Strategic improvements • Long-term value creation
+            </p>
+            <div class="footer-contact">
+                <a href="mailto:info@idlewoodcapital.com">info@idlewoodcapital.com</a> • 
+                <a href="https://www.idlewoodcapital.com">www.idlewoodcapital.com</a><br>
+                Charlotte, North Carolina
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function adjustBottomMargin() {
+            // Only run for print/PDF generation
+            if (!window.matchMedia || (!window.matchMedia('print').matches && !window.location.search.includes('print'))) {
+                return;
+            }
+
+            const content = document.querySelector('.content');
+            const lastSection = document.querySelector('.section:last-child');
+
+            if (!content || !lastSection) return;
+
+            // Calculate page height in pixels (8.5" x 11" at 96 DPI)
+            const pageHeight = 11 * 96; // 1056 pixels
+            const topMargin = 0.5625 * 96; // 54 pixels for non-first pages (reduced 25%)
+            const bottomMarginSpace = 0.5625 * 96; // 54 pixels (reduced 25%)
+
+            // Get all sections to calculate where content ends
+            const sections = document.querySelectorAll('.section');
+            let totalContentHeight = 0;
+            const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+
+            // Calculate total content height including header
+            totalContentHeight += headerHeight;
+            sections.forEach(section => {
+                totalContentHeight += section.offsetHeight;
+            });
+
+            // Estimate number of full pages needed (excluding first page)
+            const firstPageAvailableHeight = pageHeight - headerHeight;
+            const otherPageAvailableHeight = pageHeight - topMargin;
+
+            let remainingContent = totalContentHeight - headerHeight;
+            let currentPage = 1;
+            let availableSpaceOnCurrentPage = firstPageAvailableHeight;
+
+            // Simulate content flow across pages
+            while (remainingContent > 0) {
+                if (remainingContent <= availableSpaceOnCurrentPage) {
+                    // Content fits on current page
+                    const unusedSpace = availableSpaceOnCurrentPage - remainingContent;
+
+                    // If unused space is greater than bottom margin space, remove margin
+                    if (unusedSpace >= bottomMarginSpace) {
+                        document.documentElement.classList.add('tight-layout');
+                        document.documentElement.classList.remove('standard-layout');
+                    } else {
+                        document.documentElement.classList.add('standard-layout');
+                        document.documentElement.classList.remove('tight-layout');
+                    }
+                    break;
+                } else {
+                    // Move to next page
+                    remainingContent -= availableSpaceOnCurrentPage;
+                    currentPage++;
+                    availableSpaceOnCurrentPage = otherPageAvailableHeight;
+                }
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', adjustBottomMargin);
+
+        // Run before printing
+        window.addEventListener('beforeprint', adjustBottomMargin);
+
+        // Run on window resize (for dynamic content)
+        window.addEventListener('resize', adjustBottomMargin);
+
+        // For PDF generation tools that might not trigger beforeprint
+        setTimeout(adjustBottomMargin, 100);
+    </script>
+</body>
+</html>
