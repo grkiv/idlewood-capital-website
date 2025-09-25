@@ -12,5 +12,8 @@
   },
   "github": {
     "autoAlias": false
+  },
+  "analytics": {
+    "id": "prj_analytics_id_placeholder"
   }
 }
