@@ -8,7 +8,7 @@ This file contains the standard workflow for editing the Idlewood Capital websit
 - Main files: index.html (Tailwind version), investor-portal.html, login-failed.html
 - Backup files: index-vanilla.html, index-minimal.html
 - Contact email: info@idlewoodcapital.com
-- Office: 1515 Mockingbird Ln., Suite 7123, Charlotte, NC 28209
+- Office: 211 East Blvd., Charlotte, NC 28203
 
 ## STANDARD SESSION WORKFLOW
 
